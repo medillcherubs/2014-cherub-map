@@ -9,7 +9,7 @@
     <style>
       body { margin:0; padding:0; }
       #map { position: relative; width:100%; height: 400px; }
-      #hawaii-map { position: relative; width:200px; height: 400px; }
+      #hawaii-map { position: relative; width:200px; height: 200px; }
       #greece-map { position: relative; width: 200px; height: 400px;}
       #china-map { position: relative; width: 200px; height: 400px;}
       #korea-map { position: relative; width: 200px; height: 400px;}
@@ -45,8 +45,19 @@
         map.addLayer(clusterGroup);
     });
 
-    var hawaii = L.mapbox.map('hawaii-map', 'medillcherubs.j39famik', {})
-        .setView([40.73, -74.011], 4)
+    var hawaii = L.mapbox.map('hawaii-map', 'medillcherubs.j39famik', {
+            zoomControl: false
+        }).setView([21.3114, -157.7964], 4)
+
+    // Disable drag and zoom handlers.
+    hawaii.dragging.disable();
+    hawaii.touchZoom.disable();
+    hawaii.doubleClickZoom.disable();
+    hawaii.scrollWheelZoom.disable();
+
+    // Disable tap handler, if present.
+    if (hawaii.tap) hawaii.tap.disable();
+    
      var greece = L.mapbox.map('greece-map', 'medillcherubs.j39famik', {})
         .setView([40.73, -74.011], 4)
      var china = L.mapbox.map('china-map', 'medillcherubs.j39famik', {})
