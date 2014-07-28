@@ -10,6 +10,9 @@
       body { margin:0; padding:0; }
       #map { position: relative; width:100%; height: 400px; }
       #hawaii-map { position: relative; width:200px; height: 400px; }
+      #greece-map { position: relative; width: 200px; height: 400px;}
+      #china-map { position: relative; width: 200px; height: 400px;}
+      #korea-map { position: relative; width: 200px; height: 400px;}
     </style>
 </head>
 <body>
@@ -19,6 +22,9 @@
 
     <div id='map'></div>
     <div id='hawaii-map'></div>
+    <div id='greece-map'></div>
+    <div id='china-map'></div>
+    <div id='korea-map'></div>
     <script>
     // Here we don't use the second argument to map, since that would automatically
     // load in non-clustered markers from the layer. Instead we add just the
@@ -40,6 +46,12 @@
     });
 
     var hawaii = L.mapbox.map('hawaii-map', 'medillcherubs.j39famik', {})
+        .setView([40.73, -74.011], 4)
+     var greece = L.mapbox.map('greece-map', 'medillcherubs.j39famik', {})
+        .setView([40.73, -74.011], 4)
+     var china = L.mapbox.map('china-map', 'medillcherubs.j39famik', {})
+        .setView([40.73, -74.011], 4)
+    var korea = L.mapbox.map('korea-map', 'medillcherubs.j39famik', {})
         .setView([40.73, -74.011], 4)
     </script>
 </body>
