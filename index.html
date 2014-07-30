@@ -15,7 +15,6 @@
  }
       #greece-map { position: relative; width: 34.3%; height: 200px;}
       #china-map { position: relative; width: 34.5%; height: 200px;}
-     /* #korea-map { position: relative; width: 200px; height: 400px;}*/
        .left {float: left; text-align: center;}
        .top {position: relative;}
       #blurb {
@@ -34,6 +33,15 @@
     h1 {
         width: 15%;
     }
+    .cf:before,
+    .cf:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    
+    .cf:after {
+        clear: both;
+    }
     </style>
 </head>
 <body>
@@ -45,7 +53,7 @@
     <div id='map'></div>
     <div id='hawaii-map'></div>
  </div>
-<div>
+<div class="cf">
     <h2 class="=left">
         INTERNATIONALLY? 
     </h2>
